@@ -1,4 +1,9 @@
-## Welcome to GitHub Pages
+## 欢迎访问我在Github的页面
+
+这个页面会记录我再收听无线电信号中一些有趣的信号，请等待更新，我会慢慢记录下来。
+
+
+最近更新的是关于 [短波气象传真](https://github.com/cql1983/BI8AKT/edit/master/index.md) 的一些信息。
 
 You can use the [editor on GitHub](https://github.com/cql1983/BI8AKT/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
