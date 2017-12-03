@@ -3,7 +3,7 @@
 这个页面会记录我再收听无线电信号中一些有趣的信号，请等待更新，我会慢慢记录下来。
 
 
-2017.11.30 跟新了接收[机场航空情报通播](https://github.com/cql1983/BI8AKT/blob/master/%E6%9C%BA%E5%9C%BA%E9%80%9A%E6%92%AD%E6%8E%A5%E6%94%B6.html)的信息。
+2017.11.30 跟新了接收[机场航空情报通播](https://github.com/cql1983/BI8AKT/blob/master/docs/_post/%E6%9C%BA%E5%9C%BA%E9%80%9A%E6%92%AD%E6%8E%A5%E6%94%B6.md)的信息。
 
 最近更新的是关于 [短波气象传真](https://github.com/cql1983/BI8AKT/edit/master/index.md) 的一些信息。
 
