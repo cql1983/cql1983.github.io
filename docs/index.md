@@ -3,11 +3,12 @@
 这个页面会记录我在收听无线电信号中一些有趣的信号，请等待更新，我会慢慢记录下来。
 
 
-## 2017.12.03 
-最近更新的是关于 [短波气象传真](https://github.com/cql1983/BI8AKT/edit/master/index.md) 的一些信息。
+## 2017.12.03 最近更新的是关于 短波气象传真 的一些信息。
 
 
-## 2017.11.30 更新了接收[机场航空情报通播]的信息。
+
+
+## 2017.11.30 更新了接收机场航空情报通播的信息。
 
 ### 中国无线电频率划分表
 
@@ -18,6 +19,7 @@
 
     
 这次出差来到合肥，那么就用手持接收机搜一下机场频率玩玩，市区离机场几十公里，站在楼顶，很快就搜到了合肥新桥机场的机场通播频率128.850MHz,（注意民用航空频率使用的是AM模式调制），顺便我还上传了个[录音](http://player.youku.com/embed/XMzE5ODE4MzIzMg==)到优酷上面。
+<iframe height=498 width=510 src='http://player.youku.com/embed/XMzE5ODE4MzIzMg==' frameborder=0 'allowfullscreen'></iframe>
 
 
 
