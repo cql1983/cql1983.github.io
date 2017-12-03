@@ -5,7 +5,56 @@
 
 ## 2017.12.03 最近更新的是关于 短波气象传真 的一些信息。
 
+    在接收了NOAA系列气象卫星的信号后好久的时间，偶然在QQ群里得知，还有短波气象传真这个东东，于是网络上搜集，终于找到日本的短波气象传真相关信息。
+软件：http://www2.plala.or.jp/hikokibiyori/soft/kgfax/index.html  日文的，不过中国地区目前能收到的信号也只有日本的那几个频率.
 
+接收频率\(摘自kg fax 的说明文件)：
+
+    目前我有效接收到的就只有第一组这三个频率，其余的频率包括台湾的都没有收到过信号。
+-	3.6206MHz USB
+-   7.7931MHz USB
+-   13.9866MHz USB
+
+*　JMH(日本気象FAX:回転速度120rpm,同期信号長20msec)
+    3.6206MHz USB
+    7.7931MHz USB
+   13.9866MHz USB
+*　BMF(台湾気象FAX:回転速度120rpm,同期信号長10msec)
+　　4.6141MHz USB
+    5.2481MHz USB
+    8.1381MHz USB
+   13.8981MHz USB
+   18.5581MHz USB
+*  HLL(韓国気象FAX:回転速度120rpm,同期信号長20msec)
+　　5.8556MHz USB
+    7.4316MHz USB
+    9.1631MHz USB
+   13.5681MHz USB
+*  KVM(アメリカ気象FAX[ハワイ]:回転速度120rpm,同期信号長8msec)
+    9.9806MHz USB
+   11.0881MHz USB
+   16.1331MHz USB
+*  NOJ(アメリカ気象FAX[アラスカ]:回転速度120rpm,同期信号長8msec)
+    2.0521MHz USB
+    4.2961MHz USB
+    8.4571MHz USB
+   12.4106MHz USB
+*  NMC(アメリカ気象FAX[カルフォルニア]:回転速度120rpm,同期信号長8msec)
+    4.3441MHz USB
+    8.6801MHz USB
+   12.7841MHz USB
+   17.1493MHz USB
+   22.5251MHz USB
+*  JJC(共同通信無線Fax:回転速度120rpm,同期信号長20msec
+                  又は回転速度 60rpm,同期信号長45msec:新聞Fax)
+    4.3141MHz USB
+    8.4656MHz USB
+   12.7436MHz USB
+   16.9491MHz USB
+   17.0677MHz USB
+   22.5401MHz USB
+
+ 接收方法：将短波机调整到列表中的频率，选择USB模式，将喇叭或者耳机口用3.5mm公对公线连接到电脑的麦克风输入口。打开kg-fax 就能收到了。kg fax 软件的使用方法baidu有很多。
 
 
 ## 2017.11.30 更新了接收机场航空情报通播的信息。
