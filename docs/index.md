@@ -19,6 +19,7 @@
 
     
 这次出差来到合肥，那么就用手持接收机搜一下机场频率玩玩，市区离机场几十公里，站在楼顶，很快就搜到了合肥新桥机场的机场通播频率128.850MHz,（注意民用航空频率使用的是AM模式调制），顺便我还上传了个[录音](http://player.youku.com/embed/XMzE5ODE4MzIzMg==)到优酷上面。
+
 <iframe height=498 width=510 src='http://player.youku.com/embed/XMzE5ODE4MzIzMg==' frameborder=0 'allowfullscreen'></iframe>
 
 
