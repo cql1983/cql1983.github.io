@@ -7,7 +7,7 @@
 
 在接收了NOAA系列气象卫星的信号后好久的时间，偶然在QQ群里得知，还有短波气象传真这个东东，于是网络上搜集，终于找到日本的短波气象传真相关信息。
 
-软件：http://www2.plala.or.jp/hikokibiyori/soft/kgfax/index.html  日文的，不过中国地区目前能收到的信号也只有日本的那几个频率.
+软件：http://www2.plala.or.jp/hikokibiyori/soft/kgfax/index.html  日文的，不过中国地区目前能收到的信号也只有日本的那几个频率，用他们的软件不错，那个德国的软件hf-fax.de，要注册收费，据说还不好用。另外还有个seatty的软件好像也支持接收。
 
 接收频率\(摘自kg fax 的说明文件)：
 
@@ -27,7 +27,7 @@ JMH(日本気象FAX:回転速度120rpm,同期信号長20msec)
 - 7.7931MHz USB
 - 13.9866MHz USB
 ```
-
+另外，美国气象部门提供的[全球海洋气象广播：](www.nws.noaa.gov/om/marine/rfax.pdf)频率表下载。
 
 **接收方法**：将短波机调整到列表中的频率，选择USB模式，将喇叭或者耳机口用3.5mm公对公线连接到电脑的麦克风输入口。打开kg-fax 就能收到了。kg fax 软件的使用方法baidu有很多。
 
