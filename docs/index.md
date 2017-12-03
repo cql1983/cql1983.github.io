@@ -27,7 +27,7 @@ JMH(日本気象FAX:回転速度120rpm,同期信号長20msec)
 - 7.7931MHz USB
 - 13.9866MHz USB
 ```
-另外，美国气象部门提供的[全球海洋气象广播：](www.nws.noaa.gov/om/marine/rfax.pdf)频率表下载。
+另外，美国气象部门提供的[**全球海洋气象广播**](www.nws.noaa.gov/om/marine/rfax.pdf)频率表下载。
 
 **接收方法**：将短波机调整到列表中的频率，选择USB模式，将喇叭或者耳机口用3.5mm公对公线连接到电脑的麦克风输入口。打开kg-fax 就能收到了。kg fax 软件的使用方法baidu有很多。
 
