@@ -38,5 +38,11 @@ JMH(日本気象FAX:回転速度120rpm,同期信号長20msec)
 117.975—137(MHz) | 航空移动 5.111  5.200 5.200  在117.975-136 MHz频段，121.5MHz频率为航空应急频率，如属需要，123.1 MHz频率亦可作为121.5MHz频率的辅助航空频率。水上移动业务移动电台可按照第31条中规定的条件使用这些频率与航空移动业务电台通信，用于遇险和安全。（WRC-07）
 
    
-   这次出差来到合肥，那么就用手持接收机搜一下机场频率玩玩，市区离机场几十公里，站在楼顶，很快就搜到了合肥新桥机场的机场通播频率128.850MHz,（注意民用航空频率使用的是AM模式调制），顺便我还上传了个[录音](http://player.youku.com/embed/XMzE5ODE4MzIzMg==)到优酷上面。
+   这次出差来到合肥，那么就用手持接收机搜一下机场频率玩玩，市区离机场几十公里，站在楼顶，很快就搜到了合肥新桥机场的机场通播频率128.850MHz,（注意民用航空频率使用的是AM模式调制），顺便我还上传了个[**录音**](http://player.youku.com/embed/XMzE5ODE4MzIzMg==)到优酷上面。
 
+<video id="video" controls="" preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
+      <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+      <source id="webm" src="http://media.w3.org/2010/05/sintel/trailer.webm" type="video/webm">
+      <source id="ogv" src="http://media.w3.org/2010/05/sintel/trailer.ogv" type="video/ogg">
+      <p>Your user agent does not support the HTML5 Video element.</p>
+    </video>
