@@ -39,10 +39,9 @@ JMH(日本気象FAX:回転速度120rpm,同期信号長20msec)
 
    
    这次出差来到合肥，那么就用手持接收机搜一下机场频率玩玩，市区离机场几十公里，站在楼顶，很快就搜到了合肥新桥机场的机场通播频率128.850MHz,（注意民用航空频率使用的是AM模式调制），顺便我还上传了个[**录音**](http://player.youku.com/embed/XMzE5ODE4MzIzMg==)到优酷上面。
+   在线录音如下：
 
-<video id="video" controls="" preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
-      <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
-      <source id="webm" src="http://media.w3.org/2010/05/sintel/trailer.webm" type="video/webm">
-      <source id="ogv" src="http://media.w3.org/2010/05/sintel/trailer.ogv" type="video/ogg">
-      <p>Your user agent does not support the HTML5 Video element.</p>
-    </video>
+<audio controls="controls" height="100" width="100">
+  <source src="https://github.com/cql1983/BI8AKT/blob/master/docs/%E5%90%88%E8%82%A5%E6%9C%BA%E5%9C%BA%E9%80%9A%E6%92%AD.MP3" type="audio/mp3" />
+<embed height="100" width="100" src="song.mp3" />
+</audio>
