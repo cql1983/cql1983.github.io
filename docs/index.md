@@ -3,6 +3,15 @@
 这个页面会记录我在收听无线电信号中一些有趣的信号，请等待更新，我会慢慢记录下来。
 
 
+## 2017.12.14  NOAA 气象卫星的接收
+
+玩电视棒的人应该都尝试过接收这个气象云图，目前信号最好，也是最容易收的就是美国NOAA系列的几颗星了。用SDR，带宽开50K，FM模式就可以用软件解调音频信号为图像了。
+
+![image](https://raw.githubusercontent.com/cql1983/BI8AKT/master/docs/12110746_noaa19.jpg)
+
+![image](https://raw.githubusercontent.com/cql1983/BI8AKT/master/docs/12110746_noaa19_1.jpg)
+
+这两张是一次收下来的图，不同通道加处理后的图。效果更好的有苏联的LRPT格式（137.9M）以及HRPT(1.7G),但是靠拉杆天线是不行了，得上四螺旋或者八木天线了。
 
 ## 2017.12.07 SSTV接收
 
