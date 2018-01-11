@@ -3,6 +3,211 @@
 这个页面会记录我在收听无线电信号中一些有趣的信号，请等待更新，我会慢慢记录下来。
 
 
+## 2018.01.11  业余无线电视 OSD台标显示
+
+1 更新字库
+FPV使用的mini OSD 出厂已经带了字库，所以需要重新刷回默认字库，好在[这里](http://www.mylifesucks.de/tools/max7456/)有在线可以转换和查看。
+参考[这个地址]( https://www.maximintegrated.com/cn/app-notes/index.mvp/id/4117 ) 学习max7456字库的基础知识，使用 MAX7456汉字取模软件 对汉字生成二进制数据，替换默认的DEFAULTCM.MCM的字库文件对应的位置，（可以先去http://www.mylifesucks.de/tools/max7456/在线查看替换的字库是否正确）然后拷贝替换后DEFAULTCM.MCM的内容到scarab-osd （mini OSD 开源项目自带的）Font code generator.xlsm,生成fontD.h，然后scarab-osd 项目里取消注释#define LOADFONT_DEFAULT  ，编译给miniOSD刷机，他会自动更新字库。
+2 刷机使用https://github.com/Lecostarius/overlay 这个项目修改的程序，定义好需要显示的文字位置，在程序里直接显示即可。
+
+```
+
+//#include <EEPROM.h> //Needed to access eeprom read/write functions
+
+#define DATAOUT 11//MOSI
+#define DATAIN  12//MISO
+#define SPICLOCK  13//sck
+#define MAX7456SELECT 10//ss
+#define VSYNC 2// INT0
+
+
+
+//MAX7456 opcodes
+#define DMM_reg   0x04
+#define DMAH_reg  0x05l
+#define DMAL_reg  0x06
+#define DMDI_reg  0x07
+#define VM0_reg   0x00
+#define VM1_reg   0x01
+
+//MAX7456 commands
+#define CLEAR_display 0x04
+#define CLEAR_display_vert 0x06
+#define END_string 0xff
+// with NTSC
+//#define ENABLE_display 0x08
+//#define ENABLE_display_vert 0x0c
+//#define MAX7456_reset 0x02
+//#define DISABLE_display 0x00
+
+// with PAL
+// all VM0_reg commands need bit 6 set
+#define ENABLE_display 0x48
+#define ENABLE_display_vert 0x4c
+#define MAX7456_reset 0x42
+#define DISABLE_display 0x40
+
+#define WHITE_level_80 0x03
+#define WHITE_level_90 0x02
+#define WHITE_level_100 0x01
+#define WHITE_level_120 0x00
+
+// with NTSC
+//#define MAX_screen_size 390
+//#define MAX_screen_rows 13
+
+// with PAL
+#define MAX_screen_size 480
+#define MAX_screen_rows 16
+
+#define EEPROM_address_hi 510
+#define EEPROM_address_low 511
+#define EEPROM_sig_hi 'e'
+#define EEPROM_sig_low 's'
+
+volatile byte screen_buffer[MAX_screen_size]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xf8,0xf9,0xfa,0xfb,0xfc,0xfd,0x44,0x0c,0x13,0x08,0x0b,0x15,0x1e,0x00,0xfe,0x44,0x01,0x02,0x08,0x0a,0x17,0x12,0x3e};
+
+volatile byte writeOK;
+volatile byte valid_string;
+volatile byte save_screen;
+volatile int  incomingByte;
+volatile int  count= 56 ;
+
+void setup()
+{
+ byte spi_junk, eeprom_junk;
+ int x;
+ Serial.begin(9600);
+ Serial.flush();
+
+ pinMode(MAX7456SELECT,OUTPUT);
+ digitalWrite(MAX7456SELECT,HIGH); //disable device
+
+ pinMode(DATAOUT, OUTPUT);
+ pinMode(DATAIN, INPUT);
+ pinMode(SPICLOCK,OUTPUT);
+ pinMode(VSYNC, INPUT);
+
+ // SPCR = 01010000
+ //interrupt disabled,spi enabled,msb 1st,master,clk low when idle,
+ //sample on leading edge of clk,system clock/4 rate (4 meg)
+ SPCR = (1<<SPE)|(1<<MSTR);
+ spi_junk=SPSR;
+ spi_junk=SPDR;
+ delay(250);
+
+ // force soft reset on Max7456
+ digitalWrite(MAX7456SELECT,LOW);
+ spi_transfer(VM0_reg);
+ spi_transfer(MAX7456_reset);
+ digitalWrite(MAX7456SELECT,HIGH);
+ delay(500);
+
+ // set all rows to same charactor white level, 90%
+ digitalWrite(MAX7456SELECT,LOW);
+ for (x = 0; x < MAX_screen_rows; x++)
+ {
+   spi_transfer(x + 0x10);
+   spi_transfer(WHITE_level_90);
+ }
+
+ // make sure the Max7456 is enabled
+ spi_transfer(VM0_reg);
+ spi_transfer(ENABLE_display);
+ digitalWrite(MAX7456SELECT,HIGH);
+
+
+ writeOK = false;
+ valid_string = false;
+ save_screen = false;
+ incomingByte = 0;
+
+write_new_screen();
+
+ 
+}
+
+//////////////////////////////////////////////////////////////
+void loop()
+{
+;
+}
+
+//////////////////////////////////////////////////////////////
+byte spi_transfer(volatile byte data)
+{
+ SPDR = data;                    // Start the transmission
+ while (!(SPSR & (1<<SPIF)))     // Wait the end of the transmission
+ {
+ };
+ return SPDR;                    // return the received byte
+}
+
+
+
+//////////////////////////////////////////////////////////////
+void write_new_screen()
+{
+ int x, local_count;
+ byte char_address_hi, char_address_lo;
+ byte screen_char;
+ 
+ local_count = count;
+ 
+ char_address_hi = 0;
+ char_address_lo = 0;
+//Serial.println("write_new_screen");  
+
+ // clear the screen
+ digitalWrite(MAX7456SELECT,LOW);
+ spi_transfer(DMM_reg);
+ spi_transfer(CLEAR_display);
+ digitalWrite(MAX7456SELECT,HIGH);
+
+ // disable display
+ digitalWrite(MAX7456SELECT,LOW);
+ spi_transfer(VM0_reg);
+ spi_transfer(DISABLE_display);
+
+ spi_transfer(DMM_reg); //dmm
+ //spi_transfer(0x21); //16 bit trans background
+ spi_transfer(0x01); //16 bit trans w/o background
+
+ spi_transfer(DMAH_reg); // set start address high
+ spi_transfer(char_address_hi);
+
+ spi_transfer(DMAL_reg); // set start address low
+ spi_transfer(char_address_lo);
+
+ x = 0;
+ local_count =56;
+ while(local_count) // write out full screen
+ {
+   screen_char = screen_buffer[x];
+   spi_transfer(DMDI_reg);
+   spi_transfer(screen_char);
+   x++;
+   local_count--;
+ }
+
+ spi_transfer(DMDI_reg);
+ spi_transfer(END_string);
+
+ spi_transfer(VM0_reg); // turn on screen next vertical
+ spi_transfer(ENABLE_display_vert);
+ digitalWrite(MAX7456SELECT,HIGH);
+}
+
+
+
+```
+
+
+
+
+
+
+
 ## 2017.12.14  NOAA 气象卫星的接收
 
 玩电视棒的人应该都尝试过接收这个气象云图，目前信号最好，也是最容易收的就是美国NOAA系列的几颗星了。用SDR，带宽开50K，FM模式就可以用软件解调音频信号为图像了。
