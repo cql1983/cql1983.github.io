@@ -2,7 +2,7 @@
 
 大概步骤如下：
 1. 安装gnuradio  用于解调RF信号到符号流。
-2. 编译安装https://github.com/opensatelliteproject/xritdemod 用它的xritdecoder用于从符号流解码（解卷积，加扰等）。
+2. 编译安装https://github.com/opensatelliteproject/xritdemod 用它的xritdecoder用于从符号流解码（解卷积，解扰等）。
 3. 安装https://github.com/sam210723/COMS-1 库，从解码后的帧里面解出应用层数据，解密，出图。
 
 
@@ -110,7 +110,7 @@ actionchen@ubuntu:~/COMS-1$ python ./lrit-img.py -s ~/lrit
 ```
 这样就会在~/lrit/目录下看到气象云图了。
 
-
+最后，非常感谢，sam,opensatelliteproject,韩国气象局。
 
 
 
