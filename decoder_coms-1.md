@@ -14,7 +14,11 @@ gnuradio解调用sam的软件仓库里的这个框图COMS-1-master\COMS-1-master
 
 ## 解码
 
-在ubuntu 16.04上，按照https://github.com/opensatelliteproject/OpenSatelliteProject这个文章的方法编译安装https://github.com/opensatelliteproject/xritdemod库里的程序，主要是要xritdecoder这个软件从来解码。
+在ubuntu 16.04上，按照
+https://github.com/opensatelliteproject/OpenSatelliteProject
+这个文章的方法编译安装
+https://github.com/opensatelliteproject/xritdemod
+库里的程序，主要是要xritdecoder这个软件从来解码。
 
 下面是大概步骤，不一定准确
 
