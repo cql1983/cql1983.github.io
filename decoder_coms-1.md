@@ -10,7 +10,7 @@
 
 ## 解调
 gnuradio解调用sam的软件仓库里的这个框图COMS-1-master\COMS-1-master\demod\LRIT Demod.grc  （自行修改接收设备或者IQ文件源）
-
+![解调](https://raw.githubusercontent.com/cql1983/BI8AKT/master/docs/gnuradio_coms-1.jpg)
 
 ## 解码
 
