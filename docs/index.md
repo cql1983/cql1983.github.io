@@ -3,6 +3,15 @@
 这个页面会记录我在收听无线电信号中一些有趣的信号，请等待更新，我会慢慢记录下来。
 
 
+## 2019.12.16 编译gr-fosphor 
+
+ 1  当前clone代码的时候要clone gr3.7这个分支的。默认的已经是3.8的了哦。
+ 2  opencl安装intel的那个版本后，需要安装 
+ ```sudo apt install ocl-icd-opencl-dev ```
+ 这个包，否则cmake是找不到opencl的，参考这个地址 https://github.com/fireice-uk/xmr-stak-amd/issues/97
+ 3 这个包其实就是一个有Opencl加速的频谱可视化，也没什么特殊作用，视觉效果好看，不过机器配置要好，SDR带宽要大，这样就能好看了。
+
+
 ## 2018.01.11  业余无线电视 OSD台标显示
 
 1 更新字库
