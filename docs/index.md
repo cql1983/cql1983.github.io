@@ -2,6 +2,16 @@
 
 这个页面会记录我在收听无线电信号中一些有趣的信号，请等待更新，我会慢慢记录下来。
 
+## 2019.12.18 windows 下编译gnuradio的坑
+
+1 首先那个下载依赖的包要提取出来单独下载放进目录去，否则五六百M，几k的速度卡死你。http://www.gcndevelopment.com/gnuradio/downloads/sources/gnuradio_dependency_pack_v1.6.7z
+2 UHD下载fpga固件的那个python直接杀了就是，否则下不动的。
+3 没有安装fortran编译器，有一个不会被编译.
+4 没有安装opencle 的那个显卡关系，那个频谱可视化的也不会被编译，脚本里好像默认的是要AMD APP SDK。
+5 glog 里面有一个BUILD文件，所以脚本里默认build文件夹不会被创建，导致无法编译这一一个。
+6 还有几个要从sf.net下的软件，网络原因会下载失败，手工下载放进去。
+其他详细的空了来更新，我还要添加我的PlutoSDR进去呢。
+
 
 ## 2019.12.16 编译gr-fosphor 
 
