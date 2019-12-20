@@ -33,3 +33,4 @@ find_library(LIBSDRPLAY_LIBRARIES NAMES mir_sdr_api
  -DENABLE_NONFREE=TRUE 
 ```
 不知道默认是不是开启了，显式加上没错。
+7. 还要修改C:\gr-build\src-stage3\oot_code\gr-osmosdr\lib\sdrplay\sdrplay_source_c.cc   /*#include <mirsdrapi-rsp.h> 为#include <mir_sdr.h>  
