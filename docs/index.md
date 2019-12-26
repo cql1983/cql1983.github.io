@@ -12,7 +12,7 @@
 6. 还有几个要从sf.net下的软件，网络原因会下载失败，手工下载放进去。
 其他详细的空了来更新，我还要添加我的PlutoSDR进去呢。
 
-##2019.12.19 接着更新，PlutoSDR的支持参考 https://github.com/tfcollins/GNURadio_Windows_Build_Scripts/tree/gr-iio-support
+## 2019.12.19 接着更新，PlutoSDR的支持参考 https://github.com/tfcollins/GNURadio_Windows_Build_Scripts/tree/gr-iio-support
 
 注意，添加那个gr-iio下载的时候，分支要写 attr-block-update  ，他库里面写的是attr-block。脚本运行不正常,修改了以后要把build目录下的对应文件夹删掉，否则脚本判断已经下载就不会再下载了。
 
