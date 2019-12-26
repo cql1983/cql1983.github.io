@@ -4,14 +4,15 @@
 
 ## 2019.12.18 windows 下编译gnuradio的坑
 
-1 首先那个下载依赖的包要提取出来单独下载放进目录去，否则五六百M，几k的速度卡死你。http://www.gcndevelopment.com/gnuradio/downloads/sources/gnuradio_dependency_pack_v1.6.7z
-2 UHD下载fpga固件的那个python直接杀了就是，国内就算你千兆宽带也下不动的，再说我也用不起USRP。
-3 没有安装fortran编译器，有一个不会被编译.
-4 没有安装opencle 的那个显卡关系，那个频谱可视化的也不会被编译，脚本里好像默认的是要AMD APP SDK。
-5 glog 里面有一个BUILD文件，所以脚本里默认build文件夹不会被创建，导致无法编译这一一个。
-6 还有几个要从sf.net下的软件，网络原因会下载失败，手工下载放进去。
+1. 首先那个下载依赖的包要提取出来单独下载放进目录去，否则五六百M，几k的速度卡死你。http://www.gcndevelopment.com/gnuradio/downloads/sources/gnuradio_dependency_pack_v1.6.7z
+2. UHD下载fpga固件的那个python直接杀了就是，国内就算你千兆宽带也下不动的，再说我也用不起USRP。
+3. 没有安装fortran编译器，有一个不会被编译.
+4. 没有安装opencle 的那个显卡关系，那个频谱可视化的也不会被编译，脚本里好像默认的是要AMD APP SDK。
+5. glog 里面有一个BUILD文件，所以脚本里默认build文件夹不会被创建，导致无法编译这一一个。
+6. 还有几个要从sf.net下的软件，网络原因会下载失败，手工下载放进去。
 其他详细的空了来更新，我还要添加我的PlutoSDR进去呢。
-2019.12.19 接着更新，PlutoSDR的支持参考 https://github.com/tfcollins/GNURadio_Windows_Build_Scripts/tree/gr-iio-support
+
+##2019.12.19 接着更新，PlutoSDR的支持参考 https://github.com/tfcollins/GNURadio_Windows_Build_Scripts/tree/gr-iio-support
 
 注意，添加那个gr-iio下载的时候，分支要写 attr-block-update  ，他库里面写的是attr-block。脚本运行不正常,修改了以后要把build目录下的对应文件夹删掉，否则脚本判断已经下载就不会再下载了。
 
@@ -19,19 +20,19 @@
 
 ## 2019.12.16 编译gr-fosphor 
 
- 1  当前clone代码的时候要clone gr3.7这个分支的。默认的已经是3.8的了哦。
- 2  opencl安装intel的那个版本后，需要安装 
+ 1.  当前clone代码的时候要clone gr3.7这个分支的。默认的已经是3.8的了哦。
+ 2.  opencl安装intel的那个版本后，需要安装 
  ```sudo apt install ocl-icd-opencl-dev ```
  这个包，否则cmake是找不到opencl的，参考这个地址 https://github.com/fireice-uk/xmr-stak-amd/issues/97
- 3 这个包其实就是一个有Opencl加速的频谱可视化，也没什么特殊作用，视觉效果好看，不过机器配置要好，SDR带宽要大，这样就能好看了。
+ 3. 这个包其实就是一个有Opencl加速的频谱可视化，也没什么特殊作用，视觉效果好看，不过机器配置要好，SDR带宽要大，这样就能好看了。
 
 
 ## 2018.01.11  业余无线电视 OSD台标显示
 
-1 更新字库
+1. 更新字库
 FPV使用的mini OSD 出厂已经带了字库，所以需要重新刷回默认字库，好在[这里](http://www.mylifesucks.de/tools/max7456/)有在线可以转换和查看。
 参考[这个地址]( https://www.maximintegrated.com/cn/app-notes/index.mvp/id/4117 ) 学习max7456字库的基础知识，使用 MAX7456汉字取模软件 对汉字生成二进制数据，替换默认的DEFAULTCM.MCM的字库文件对应的位置，（可以先去http://www.mylifesucks.de/tools/max7456/在线查看替换的字库是否正确）然后拷贝替换后DEFAULTCM.MCM的内容到scarab-osd （mini OSD 开源项目自带的）Font code generator.xlsm,生成fontD.h，然后scarab-osd 项目里取消注释#define LOADFONT_DEFAULT  ，编译给miniOSD刷机，他会自动更新字库。
-2 刷机使用https://github.com/Lecostarius/overlay 这个项目修改的程序，定义好需要显示的文字位置，在程序里直接显示即可。
+2. 刷机使用https://github.com/Lecostarius/overlay 这个项目修改的程序，定义好需要显示的文字位置，在程序里直接显示即可。
 
 ```
 
